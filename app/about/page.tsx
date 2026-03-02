@@ -1,9 +1,12 @@
 'use client';
 
-import { VscGithub, VscMail, VscLinkExternal } from 'react-icons/vsc';
+import Image from 'next/image';
+import { VscGithub, VscMail } from 'react-icons/vsc';
 import Link from 'next/link';
 
 import styles from '@/styles/AboutPage.module.css';
+
+const PROFILE_IMAGE_SRC = '/images/profile-photo.png';
 
 const AboutPage = () => {
   return (
@@ -12,6 +15,16 @@ const AboutPage = () => {
         {/* Header */}
         <header className={styles.header}>
           <div className={styles.headerContent}>
+            <div className={styles.avatarFrame}>
+              <Image
+                src={PROFILE_IMAGE_SRC}
+                alt="Portrait of Drashti Darshit Magia"
+                width={118}
+                height={118}
+                className={styles.avatarImage}
+                priority
+              />
+            </div>
             <div className={styles.headerText}>
               <h1 className={styles.name}>Drashti Darshit Magia</h1>
               <p className={styles.role}>AI Engineer</p>
