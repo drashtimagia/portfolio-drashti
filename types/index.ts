@@ -4,9 +4,9 @@ export interface Article {
   description: string;
   cover_image: string;
   url: string;
-  page_views_count: number;
-  public_reactions_count: number;
-  comments_count: number;
+  page_views_count: number | null;
+  public_reactions_count: number | null;
+  comments_count: number | null;
 }
 
 export interface Project {

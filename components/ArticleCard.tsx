@@ -10,6 +10,8 @@ interface ArticleCardProps {
   index: number;
 }
 
+const formatMetric = (value: number | null) => (typeof value === 'number' ? value.toLocaleString() : '--');
+
 const ArticleCard = ({ article }: ArticleCardProps) => {
   return (
     <a
@@ -28,7 +30,7 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
         />
         <div className={styles.viewsBadge}>
           <VscEye size={13} />
-          <span>{article.page_views_count.toLocaleString()}</span>
+          <span>{formatMetric(article.page_views_count)}</span>
         </div>
       </div>
       
@@ -42,12 +44,12 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
           <div className={styles.stats}>
             <div className={styles.stat}>
               <VscHeart size={13} />
-              <span>{article.public_reactions_count}</span>
+              <span>{formatMetric(article.public_reactions_count)}</span>
             </div>
             
             <div className={styles.stat}>
               <VscComment size={13} />
-              <span>{article.comments_count}</span>
+              <span>{formatMetric(article.comments_count)}</span>
             </div>
           </div>
         </div>
