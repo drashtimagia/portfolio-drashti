@@ -21,7 +21,7 @@ export default async function ArticlesPage() {
             <div className={styles.headerContent}>
               <h1 className={styles.title}>My Articles</h1>
               <p className={styles.subtitle}>
-                All Medium posts, synced on the server and refreshed on the page without a redeploy.
+                Medium drops where I turn ideas into fun, buildable insights across tech, systems, and creativity.
               </p>
             </div>
           </div>
