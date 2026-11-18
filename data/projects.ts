@@ -3,7 +3,7 @@ import type { Project } from '@/types';
 export const projects: Project[] = [
   {
     title: 'AgentChaos',
-    date: 'Nov 2025',
+    date: 'Nov 2026',
     problem:
       'No standard way to measure how AI agents behave under real-world failures like timeouts, rate limits, and malformed responses.',
     solution:
