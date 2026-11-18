@@ -16,8 +16,16 @@ export const revalidate = 600;
 const GITHUB_USERNAME = 'drashtimagia';
 
 async function getGithubData() {
+  const headers: HeadersInit = {
+    Accept: 'application/vnd.github+json',
+    ...(process.env.GITHUB_TOKEN
+      ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` }
+      : {}),
+  };
+
   const userRes = await fetch(
-    `https://api.github.com/users/${GITHUB_USERNAME}`
+    `https://api.github.com/users/${GITHUB_USERNAME}`,
+    { headers }
   );
   if (!userRes.ok) {
     throw new Error(`Failed to fetch user: ${userRes.status}`);
@@ -25,7 +33,8 @@ async function getGithubData() {
   const user: User = await userRes.json();
 
   const repoRes = await fetch(
-    `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=pushed&per_page=6`
+    `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=pushed&per_page=6`,
+    { headers }
   );
   if (!repoRes.ok) {
     throw new Error(`Failed to fetch repos: ${repoRes.status}`);
