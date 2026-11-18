@@ -5,12 +5,12 @@ export const projects: Project[] = [
     title: 'AgentChaos',
     date: 'Nov 2026',
     problem:
-      'AI agents fail silently under real-world conditions — rate limits, timeouts, malformed responses — with no standard way to measure resilience before shipping.',
+      'AI agents fail silently under real-world conditions with no standard way to measure resilience before shipping.',
     solution:
-      'Designed and built a fault-injection middleware that intercepts tool calls, injects deterministic failures via a policy engine, and scores agent behavior across task success, safety, graceful degradation, and execution stability using a composite 0–100 resilience metric.',
+      'Built a fault-injection middleware that intercepts tool calls, injects deterministic failures through a policy engine, and produces a composite resilience score across task success, safety, graceful degradation, and execution stability.',
     techStack: 'Python, Pydantic v2, MCP, Claude Agent SDK, OpenAI Agents SDK, LangGraph, OpenTelemetry, pytest, Docker',
     metrics:
-      'Supports 4 agent frameworks with zero API keys required; ships a pytest plugin, GitHub Action, OTLP export, and HTML bench report — 158 tests, all passing.',
+      'Works across 4 agent frameworks with no API keys required. Ships a pytest plugin, GitHub Action, and OpenTelemetry export out of the box.',
     logo: '/logos/react_icon.svg',
     github: 'https://github.com/drashtimagia/agentchaos',
     demo: 'https://github.com/drashtimagia/agentchaos',
