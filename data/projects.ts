@@ -2,6 +2,21 @@ import type { Project } from '@/types';
 
 export const projects: Project[] = [
   {
+    title: 'AgentChaos',
+    date: 'Nov 2025',
+    problem:
+      'No standard way to measure how AI agents behave under real-world failures like timeouts, rate limits, and malformed responses.',
+    solution:
+      'Built an open-source chaos engineering library that sits between an agent and its tools, injects realistic faults, and scores resilience across four dimensions: task success, safety, graceful failure, and execution stability.',
+    techStack: 'Python, Pydantic, MCP, Claude Agent SDK, OpenAI Agents SDK, LangGraph, OpenTelemetry, pytest, Docker',
+    metrics:
+      '158 tests, zero real API calls required, supports 4 agent frameworks, ships a pytest plugin, GitHub Action, and OTel export.',
+    logo: '/logos/react_icon.svg',
+    github: 'https://github.com/drashtimagia/agentchaos',
+    demo: 'https://github.com/drashtimagia/agentchaos',
+    slug: 'agentchaos',
+  },
+  {
     title: 'Adaptive RLHF for Responsible LLM Personalization',
     date: 'Mar 2025 to May 2025',
     problem:
