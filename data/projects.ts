@@ -2,6 +2,21 @@ import type { Project } from '@/types';
 
 export const projects: Project[] = [
   {
+    title: 'minivllm',
+    date: 'Nov 2026',
+    problem:
+      'LLM serving throughput depends on how requests are batched and how KV cache memory is managed, and the techniques behind it are hard to understand without building them.',
+    solution:
+      'Built an inference engine from scratch in PyTorch with continuous batching, a paged KV cache with preemption, prefix caching, chunked prefill, and an OpenAI compatible streaming server. Every phase was gated by token-for-token agreement with Hugging Face transformers.',
+    techStack: 'Python, PyTorch, FastAPI, safetensors, Prometheus, pytest, GitHub Actions',
+    metrics:
+      'Greedy output matches Hugging Face transformers token for token on 20 prompts in static, continuous, and chunked-prefill modes, backed by 89 automated tests. Benchmarks against vLLM are scripted but not yet run.',
+    logo: '/logos/react_icon.svg',
+    github: 'https://github.com/drashtimagia/minivllm',
+    demo: 'https://github.com/drashtimagia/minivllm',
+    slug: 'minivllm',
+  },
+  {
     title: 'AgentChaos',
     date: 'Nov 2026',
     problem:
