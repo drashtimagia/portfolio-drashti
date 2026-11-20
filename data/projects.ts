@@ -2,6 +2,21 @@ import type { Project } from '@/types';
 
 export const projects: Project[] = [
   {
+    title: 'KubePilot',
+    date: 'Nov 2026',
+    problem:
+      'During a Kubernetes incident, engineers paste kubectl output into generic chat tools that forget the cluster, lose the incident history, and can invent details that were never in the output.',
+    solution:
+      'Built an incident copilot on Cloudflare. Llama 3.3 on Workers AI streams triage through an Agents SDK Durable Object that keeps incidents, per-incident timelines, and cluster facts in SQLite. A Cloudflare Workflows pipeline runs a durable multi-step diagnosis with retries and live progress. A pure kubectl parser and a runbook library ground the answers, and our own code flags every suggested command as read-only or cluster-changing.',
+    techStack: 'TypeScript, Cloudflare Workers AI (Llama 3.3), Agents SDK, Durable Objects, Workflows, React, Vite, Vitest',
+    metrics:
+      'Deployed on Cloudflare with one-click sample incidents that work on desktop and mobile. 62 automated tests, including the diagnosis steps against a mocked model, under strict TypeScript. It only suggests commands and never runs them.',
+    logo: '/logos/react_icon.svg',
+    github: 'https://github.com/drashtimagia/cf_ai_kubepilot',
+    demo: 'https://cf-ai-kubepilot.drashtimagia02.workers.dev',
+    slug: 'kubepilot',
+  },
+  {
     title: 'minivllm',
     date: 'Nov 2026',
     problem:
